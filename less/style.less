@@ -1,0 +1,62 @@
+@import 'elements.less';
+// custom colour set
+@blue: #07588D;
+@back: #FAE0CC;
+
+body {
+  font: 16px/160% 'Open sans';
+  a,
+  a:visited,
+  a:hover,
+  a:active  {
+    color: @blue;
+    text-decoration: none;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1020px;
+}
+
+.tags {
+  background: @back;
+  font-size: 11px;
+  padding: 3px;
+  margin: 0 3px 0;
+  .rounded(3px);
+}
+
+.list-author {
+  color: #ccc;
+  font-size: 0.8em;
+}
+
+.post {
+  border-top: 1px dotted #ddd;
+  a,
+  a:visited {
+    color: @blue;
+    text-decoration: underline;
+  }
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
+  code {
+    background: @back;
+    padding: 2px;
+    white-space: pre-wrap;
+    .rounded(3px);
+  }
+  .highlight {
+    background: @back;
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}
+
+footer,
+#footer {
+	text-align: center;
+}

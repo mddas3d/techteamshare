@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h2>
+  {{ page.title }}
+  {% for item in page.tag %}
+    <span class='tags'>{{ item }}</span>
+  {% endfor %}
+</h2>
+<span>{{ page.author }} | {{ page.date | date:'%d %b, %Y' }}</span>
+<div class='post'>
+  {{ content }}
+</div>
