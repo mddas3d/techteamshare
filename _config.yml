@@ -1,5 +1,6 @@
 markdown: redcarpet
 pygments: true
+permalink: /techteamshare/
 # Description and information
 author: Aimee
 title: Boilerplates:title
