@@ -1,6 +1,7 @@
 markdown: redcarpet
 pygments: true
-permalink: /techteamshare/:categories/:year/:month/:day/:title.html
+permalink: /:categories/:year/:month/:day/:title.html
+url: http://summerdaysinbloom.github.io/techteamshare/
 # Description and information
 author: Aimee
 title: Boilerplates:title
