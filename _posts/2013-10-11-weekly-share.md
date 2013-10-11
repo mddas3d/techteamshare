@@ -8,6 +8,8 @@ tag: [share, tools]
 
 #Tech team weekly
 
+[slideshow](http://summerdaysinbloom.github.io/techteamshare/slideshow.html)
+
 ## Yeoman + grunt + bower
 
 [yeoman.io](http://yeoman.io/)
