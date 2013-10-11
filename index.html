@@ -6,6 +6,6 @@ title: Home
 <h2>Boilerplates</h2>
 <ul class='posts'>
   {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href='{{ post.url }}'>{{ post.title }} <span class='list-author'> | {{ post.author }}<span></a></li>
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href='{{ site.url}}{{ post.url }}'>{{ post.title }} <span class='list-author'> | {{ post.author }}<span></a></li>
   {% endfor %}
 </ul>
