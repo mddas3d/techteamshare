@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <title>boilerplate: jekyll with grunt and bower</title>
+    <meta name='viewport' content='width=device-width'>
+    <!-- stylesheet -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='http://localhost:4000/assets.css'>
+  </head>
+  <body>
+    <div class='wrapper'>
+      <div class='header'>
+        <h1 class='title'>Boilerplates:title</a></h1>
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/'>Contact</a></li>
+        </ul>
+      </div>
+      <!-- generated  -->
+      <h2>
+  boilerplate: jekyll with grunt and bower
+  
+    <span class='tags'>boilerplate</span>
+  
+</h2>
+<span>Aimee | 02 Oct, 2013</span>
+<div class='post'>
+  <h1>Jekyll with grunt and bower</h1>
+
+<p>Jekyll with grunt and bower.</p>
+
+<h2>Before you start</h2>
+
+<p>Make sure that you have : </p>
+
+<ul>
+<li>Install <a href="http://brew.sh/">Homebrew</a>, also you may need to check this <a href="https://github.com/mxcl/homebrew/wiki">wiki</a>.</li>
+<li>Install <a href="https://rvm.io/">RVM</a> with a ruby: <code>$ \curl -L https://get.rvm.io | bash -s stable --rails --ruby=1.9.3</code> or <code>--ruby=higher</code></li>
+<li>Set up <a href="http://shapeshed.com/setting-up-nodejs-and-npm-on-mac-osx/">Node.js and npm</a></li>
+</ul>
+
+<p>** More datails about installing <a href="http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/">RVM with a Ruby on mac</a>.</p>
+
+<h2>How to start</h2>
+
+<ol>
+<li><code>$ npm install</code></li>
+<li><code>$ bower install</code></li>
+<li><code>$ jekyll serve</code> to start server</li>
+<li><code>$ grunt watch</code>, it will run <strong>jekyll build</strong> automatically when you change files: <code>e.g. _posts/**/*.md&#39;</code>, <code>&#39;_layout/*.html&#39;</code>, <code>&#39;_includes/*.html&#39;</code>, <code>&#39;*.yml&#39;</code>, <code>&#39;*.html&#39;</code> etc.</li>
+</ol>
+
+<p>** To update packages and dependencies : <code>package.json</code> &amp; <code>bower.json</code>, you can also edit <code>Gruntfile.js</code> to add more tasks. </p>
+
+<h2>Run jekyll</h2>
+
+<p><code>jekyll serve</code></p>
+
+<h2>Boilerplate</h2>
+
+<p>Easily install dependent packages by using <a href="http://gruntjs.com">grunt</a>, This boilerplate is for simple jekyll starter therefore: </p>
+
+<p><strong>packages.json</strong> includes: <code>grunt</code>,<code>grunt-contrib-watch</code>,<code>grunt-contrib-less</code> and <code>grunt-shell-spawn</code>. Also you will be able to install any other <a href="http://gruntjs.com/plugins">plugins</a>.</p>
+
+<p><strong>bower.json</strong> : For the dependencies, there is <a href="https://github.com/bower/bower">bower</a> you can install another components and can be directly searched with <code>$ bower search keyword</code> e.g.<code>$ bower search bootstrap</code>, also be albe to search in their official site, visit <a href="http://sindresorhus.com/bower-components/">bower components</a>. </p>
+
+<p><strong>Gruntfile.js</strong> : It defined default task and plugin task. </p>
+
+<h3>re-build jekyll when specific file has been changed</h3>
+
+<p>Here, added shell command which will be automatically build jekyll site, specific files are added watch:jekyll configuration. </p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">shell: {
+  jekyll: {
+    command: &#39;jekyll build&#39;,
+    options: {
+      async: false
+    }
+  }
+}
+</code></pre></div>
+<p>Basically added <code>less</code> for theme. It is a bower component and everytime you update your <code>less</code> file under the <code>/less</code> directory then it will automatically combine and re-generate a file, which is <code>assets.css</code>.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">less: {
+    dev: {
+        options: {
+            yuicompress: true
+        },
+        files: {
+            &#39;assets.css&#39; : [&#39;less/**/*.less&#39;]
+        }
+    }
+}
+</code></pre></div>
+<p><code>watch</code> follows every changes of specific files, so you can easily update files and tasks.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">watch: {
+  jekyll: {
+    files: [&#39;*.yml&#39;, &#39;*.html&#39;, &#39;*.css&#39;, &#39;_posts/**/*.md&#39;, &#39;_layouts/*.html&#39;, &#39;_includes/*.html&#39;],
+    tasks: [&#39;shell:jekyll&#39;]
+  },
+  less: {
+      files: [&#39;less/**/*.less&#39;],
+      tasks: [&#39;less&#39;]
+  }
+}
+</code></pre></div>
+</div>
+
+    </div>
+    <footer id='footer'>
+  <p>&copy copyright 2013. Aimee</p>
+  <p>powered by <a href='https://github.com/mojombo/jekyll' target='_blank'>jekyll</a> & sharing boilerplates</p>
+</footer>
+  </body>
+</html>
