@@ -14,6 +14,19 @@ body {
   }
 }
 
+/* Effective */
+a.icon-alone {
+  display:inline-block;
+  color: @blue;
+  text-decoration: none;
+}
+
+a.icon-alone .screen-reader-text { 
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
 .wrapper {
   margin: 0 auto;
   width: 1020px;
@@ -59,4 +72,8 @@ body {
 footer,
 #footer {
 	text-align: center;
+}
+
+#disqus_thread {
+  padding-top: 20px !important;
 }
